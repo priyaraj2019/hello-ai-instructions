@@ -1,13 +1,16 @@
 :root {
-  /* Professional web-safe color palette */
+  /* Professional web-safe color palette - Brand System */
   --background: #f5f7fa;
+  --surface: #ffffff;
   --text: #2c3e50;
   --text-light: #5a6c7d;
-  --card: #ffffff;
+  --muted: #8899aa;
   --accent: #3b82f6;
   --accent-dark: #2563eb;
   --accent-light: #eff6ff;
   --border: #e5e7eb;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
   --success: #10b981;
   --success-light: #ecfdf5;
   --secondary: #8b5cf6;
@@ -30,6 +33,99 @@ body {
   color: var(--text);
   line-height: 1.6;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Standard Header */
+.site-header {
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 16px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.header-branding {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.site-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0;
+  padding: 0;
+}
+
+.site-tagline {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.header-nav a:hover,
+.header-nav a:focus-visible {
+  color: var(--accent);
+  background-color: var(--accent-light);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .header-content {
+    gap: 16px;
+  }
+
+  .header-nav {
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .site-name {
+    font-size: 1.1rem;
+  }
+
+  .site-tagline {
+    font-size: 0.8rem;
+  }
+}
+
+main {
+  flex: 1;
 }
 
 .page {
@@ -41,9 +137,9 @@ body {
 /* Header / Hero Section */
 .hero {
   padding: 60px 48px;
-  background: linear-gradient(135deg, var(--card) 0%, var(--accent-light) 100%);
+  background: linear-gradient(135deg, var(--surface) 0%, var(--accent-light) 100%);
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow);
   border: 1px solid var(--border);
   margin-bottom: 32px;
 }
@@ -225,10 +321,10 @@ h2 {
 .card {
   margin-bottom: 32px;
   padding: 40px 48px;
-  background: var(--card);
+  background: var(--surface);
   border-radius: 12px;
   border: 1px solid var(--border);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .card p {
@@ -350,32 +446,63 @@ code {
   font-size: 0.9em;
 }
 
-/* Footer */
-.footer {
-  margin-top: 48px;
-  padding-top: 32px;
+/* Standard Footer */
+.site-footer {
+  background-color: var(--surface);
   border-top: 1px solid var(--border);
-  text-align: center;
-  color: var(--text-light);
-  font-size: 0.95rem;
+  padding: 40px 16px;
+  margin-top: auto;
+  box-shadow: var(--shadow-sm);
 }
 
-.footer a {
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-info p {
+  margin: 0;
+}
+
+.footer-info strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.footer-info a {
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
-.footer a:hover {
+.footer-info a:hover,
+.footer-info a:focus-visible {
   color: var(--accent-dark);
   text-decoration: underline;
 }
 
-.footer a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: 4px;
+.brand-confirmation {
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
 }
 
 /* Responsive Design */
@@ -469,6 +596,11 @@ code {
   .learning-intro {
     font-size: 0.95rem;
   }
+
+  .header-nav a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
 }
 
 /* Focus visible for keyboard navigation */
@@ -481,6 +613,11 @@ code {
 @media print {
   body {
     background: white;
+  }
+
+  .site-header,
+  .site-footer {
+    border: 1px solid #ccc;
   }
 
   .card,
