@@ -3,22 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="An AI practice repository demonstrating how GitHub Copilot reads repository-level instructions and task-specific skills to provide consistent, intelligent guidance for your projects." />
+  <meta name="description" content="AI Instructions Lab - A practice repository demonstrating how GitHub Copilot reads repository-level instructions and task-specific skills to provide consistent, intelligent guidance for your projects." />
   <meta name="theme-color" content="#3b82f6" />
-  <title>Hello AI Instructions - Copilot Practice Repository</title>
+  <title>AI Instructions Lab - Copilot Practice Repository</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Standard Header -->
+  <header class="site-header">
+    <div class="header-content">
+      <div class="header-branding">
+        <h1 class="site-name">AI Instructions Lab</h1>
+        <p class="site-tagline">A practice repo for learning AI-guided development</p>
+      </div>
+      <nav class="header-nav">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#why-it-matters">Why It Matters</a></li>
+        <li><a href="#get-started">Get Started</a></li>
+      </nav>
+    </div>
+  </header>
+
   <main class="page">
     <!-- Hero Section -->
-    <header class="hero">
+    <section class="hero">
       <p class="eyebrow" aria-label="Category">AI Enablement Practice Repo</p>
-      <h1>Hello AI Instructions</h1>
+      <h2>Hello AI Instructions</h2>
       <p class="hero-description">
         A beginner-friendly practice repository demonstrating how GitHub Copilot reads repository-level instructions and task-specific skills to provide consistent, intelligent guidance for your projects.
       </p>
       <a class="button button-primary" href="#features">Explore features</a>
-    </header>
+    </section>
 
     <!-- Skill Applied Section -->
     <section class="skill-applied">
@@ -64,7 +79,7 @@
     </section>
 
     <!-- Why This Matters Section -->
-    <section class="card">
+    <section id="why-it-matters" class="card">
       <h2>Why repository instructions matter</h2>
       <p>
         Repository instructions help GitHub Copilot understand your project's context, coding standards, and expectations. This creates a personalized development experience where Copilot gives you advice that fits your specific use case.
@@ -75,7 +90,7 @@
     </section>
 
     <!-- Get Started Section -->
-    <section class="card">
+    <section id="get-started" class="card">
       <h2>Get started</h2>
       <ol class="steps">
         <li>Check the <code>.github/copilot-instructions.md</code> file to see repository guidelines</li>
@@ -83,13 +98,19 @@
         <li>Notice how Copilot respects the beginner-friendly, no-framework approach</li>
       </ol>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <p>
-        Learn more about <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a> and explore how AI can enhance your development workflow.
-      </p>
-    </footer>
   </main>
+
+  <!-- Standard Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <p><strong>This is a practice repository.</strong> It demonstrates how <strong>repository instructions</strong> and <strong>skills</strong> guide GitHub Copilot's behavior in a simple, beginner-friendly way.</p>
+        <p>
+          Learn more about <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a> and explore how AI can enhance your development workflow.
+        </p>
+      </div>
+      <div class="brand-confirmation">✓ Brand system applied</div>
+    </div>
+  </footer>
 </body>
 </html>
