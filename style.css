@@ -1,71 +1,252 @@
 :root {
-  --background: #f7f7fb;
-  --text: #1f2937;
-  --muted: #4b5563;
+  /* Professional web-safe color palette */
+  --background: #f5f7fa;
+  --text: #2c3e50;
+  --text-light: #5a6c7d;
   --card: #ffffff;
-  --accent: #2563eb;
-  --accent-dark: #1d4ed8;
+  --accent: #3b82f6;
+  --accent-dark: #2563eb;
+  --accent-light: #eff6ff;
+  --border: #e5e7eb;
+  --success: #10b981;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--background);
   color: var(--text);
+  line-height: 1.6;
 }
 
 .page {
   max-width: 900px;
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: 40px 24px;
 }
 
+/* Header / Hero Section */
 .hero {
-  padding: 48px;
+  padding: 60px 48px;
   background: var(--card);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(31, 41, 55, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
 }
 
 .eyebrow {
+  margin: 0 0 12px 0;
   color: var(--accent);
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.875rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
 
 h1 {
-  font-size: 3rem;
-  margin: 12px 0;
+  margin: 0 0 20px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
 }
 
-p {
-  color: var(--muted);
-  line-height: 1.6;
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
 }
 
+.hero-description {
+  margin: 0 0 28px 0;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+/* Buttons */
 .button {
   display: inline-block;
-  margin-top: 16px;
-  padding: 12px 18px;
-  background: var(--accent);
-  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
   text-decoration: none;
-  border-radius: 999px;
-  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  font-size: 1rem;
 }
 
-.button:hover {
-  background: var(--accent-dark);
+.button-primary {
+  background-color: var(--accent);
+  color: white;
 }
 
+.button-primary:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.button-primary:active {
+  transform: translateY(0);
+}
+
+.button-primary:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Card Section */
 .card {
-  margin-top: 24px;
-  padding: 32px;
+  margin-bottom: 32px;
+  padding: 40px 48px;
   background: var(--card);
-  border-radius: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.checklist {
+  margin: 0;
+  padding-left: 24px;
+  list-style: none;
+}
+
+.checklist li {
+  margin-bottom: 16px;
+  color: var(--text-light);
+  padding-left: 28px;
+  position: relative;
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer a:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page {
+    padding: 24px 16px;
+  }
+
+  .hero {
+    padding: 40px 28px;
+  }
+
+  .card {
+    padding: 28px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 16px 12px;
+  }
+
+  .hero {
+    padding: 32px 16px;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .checklist li {
+    margin-bottom: 12px;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+  }
+
+  .card,
+  .hero {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .button {
+    display: none;
+  }
 }
